@@ -10,7 +10,7 @@ class ReviewsController < ApplicationController
     @product = Product.find(params[:product_id])
     @review = @product.reviews.new(review_params)
     if @review.save
-      flash[:alert] = "Review successfully created!"
+      flash[:notice] = "Review successfully created!"
       redirect_to product_path(@product)
     else
       flash[:alert] = "Review was not created!"
