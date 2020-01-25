@@ -1,4 +1,5 @@
 class ReviewsController < ApplicationController
+  before_action :admin, only: [:create]
 
   def new
     @product = Product.find(params[:product_id])
