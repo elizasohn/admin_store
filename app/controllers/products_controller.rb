@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+  before_action :admin, only: [:create, :update, :delete]
 
   def index
     @products = Product.all
@@ -31,7 +32,7 @@ class ProductsController < ApplicationController
       @products = @products.most_recent(params[:most_recent])
     else
       @product = Product.find(params[:id])
-    end 
+    end
     render :show
   end
 

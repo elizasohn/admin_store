@@ -19,7 +19,7 @@ class ApplicationController < ActionController::Base
     if !current_user
       flash[:alert] = "You must log in to visit that page."
       redirect_to '/'
-    elsif current_user.admin = "false"
+    elsif !current_user.admin
       flash[:alert] = "You need to be an admin to perform that action!"
       redirect_to '/'
     end
