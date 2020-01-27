@@ -1,4 +1,4 @@
-<h1>Edit review:</h1>
+<h1><span>Edit review:</span></h1>
 
 <%= form_for [@product, @review] do |f| %>
   <%= f.label :author %>
@@ -7,5 +7,5 @@
   <%= f.text_area :content_body %>
   <%= f.label :rating %>
   <%= f.text_area :rating %>
-  <p><%= f.submit %></p>
+  <p><span><%= f.submit %></span></p>
 <% end %>
